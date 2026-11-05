@@ -1,0 +1,9 @@
+# Build output and release packages (ZIPs go to GitHub Releases, not the repo)
+build/
+dist/
+
+# Toolchain, third-party binaries and models: fetched by fetch-deps.ps1 (SHA-256 verified)
+third_party/
+
+*.pdb
+*.o

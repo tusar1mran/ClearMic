@@ -1,0 +1,88 @@
+ClearMic - install guide
+========================
+
+ClearMic removes background noise (keyboard, fans, traffic, other people
+talking) from your microphone and sends the clean audio to Google Meet,
+Zoom, Teams, Discord, OBS and your browser.
+
+Requirements
+------------
+- Windows 10 or 11, 64-bit
+- A processor from about 2013 or later (Intel Haswell / AMD Zen or newer)
+
+
+Step 1 - Install the virtual microphone (VB-CABLE, free)
+--------------------------------------------------------
+1. Download VB-CABLE from https://vb-audio.com/Cable/
+2. Extract the ZIP file.
+3. Right-click VBCABLE_Setup_x64.exe and choose "Run as administrator".
+4. Click "Install Driver".
+5. Restart your PC.
+
+
+Step 2 - Install the Microsoft Visual C++ runtime (if you don't have it)
+------------------------------------------------------------------------
+This is needed for the "High quality" AI model and "My voice only".
+1. Download it from Microsoft: https://aka.ms/vs/17/release/vc_redist.x64.exe
+2. Run it and click Install. If it says it is already installed, close it.
+
+
+Step 3 - Run ClearMic
+---------------------
+1. Extract this ZIP to a permanent folder, for example
+   C:\Program Files\ClearMic  or  Documents\ClearMic
+   (keep all the files together; don't move ClearMic.exe on its own).
+2. Double-click ClearMic.exe.
+
+   If Windows shows "Windows protected your PC":
+   click "More info", then "Run anyway".
+   ClearMic is not code-signed yet, which is why Windows warns you.
+
+   If Windows says "Smart App Control blocked this app", ClearMic
+   cannot run on that PC until it is code-signed. Contact the person who
+   gave you ClearMic.
+
+
+Step 4 - Set it up
+------------------
+1. Microphone: choose your real microphone (headset is best).
+   Do NOT choose "Windows default microphone" if you do step 6 below.
+2. AI model: "High quality - DeepFilterNet3".
+3. Quality: tick "Enhance voice (HD)".
+4. Voice focus:
+   - "Normal" is a good start.
+   - For "My voice only": click "Teach my voice", talk normally for about
+     20 seconds in a quiet room, and wait until it reaches 100%.
+     Keep "Match above" at 45% or higher.
+5. Tick "Start ClearMic when Windows starts" if you want it always on.
+
+
+Step 5 - Use the clean microphone in your apps
+----------------------------------------------
+In Meet, Zoom, Teams, Discord, OBS or a recording website, choose this
+microphone:
+
+    CABLE Output (VB-Audio Virtual Cable)
+
+If you choose your normal microphone instead, the app gets the noisy
+audio and ClearMic has no effect.
+
+
+Step 6 (optional) - Use ClearMic in every app automatically
+------------------------------------------------------------
+Windows Settings > System > Sound > Input:
+choose "CABLE Output (VB-Audio Virtual Cable)".
+Make sure ClearMic's Microphone is set to your real microphone (step 4.1).
+
+
+Good to know
+------------
+- Closing the window keeps ClearMic running in the system tray (next to
+  the clock). Use "Quit ClearMic" to stop it.
+- Settings are saved automatically.
+- "Teach my voice" stores a voiceprint only on this PC, in
+  %LOCALAPPDATA%\ClearMic\voiceprint.bin. Nothing is uploaded.
+  "Forget" deletes it.
+- To uninstall: quit ClearMic, untick "Start ClearMic when Windows
+  starts" first, then delete the ClearMic folder and
+  %LOCALAPPDATA%\ClearMic. VB-CABLE can be removed from its setup program.
